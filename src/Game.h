@@ -4,13 +4,17 @@
 
 #ifndef GAME_H
 #define GAME_H
-#include <SDL2/SDL_render.h>
-#include <SDL2/SDL_video.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include <iostream>
+#include "GameObject.h"
 
+class GameObject;
 
 class Game {
 public:
     bool game_running;
+    static SDL_Renderer* renderer;
 
     Game();
     ~Game();
@@ -21,9 +25,9 @@ public:
     void clean_game();
 
 private:
-
+    int red, blue, green;
     SDL_Window* window;
-    SDL_Renderer* renderer;
+    GameObject* board;
 };
 
 
